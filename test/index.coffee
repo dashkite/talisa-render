@@ -1,0 +1,21 @@
+import assert from "@dashkite/assert"
+import {test, success} from "@dashkite/amen"
+import print from "@dashkite/amen-console"
+
+import esthetic from "esthetic";
+import { HTML } from "@dashkite/html-render"
+
+import render from "../src/index"
+import site from "./site"
+
+do ->
+
+  print await test "Talisa Render", [
+
+    test "render", ->
+      html = HTML.render render "home", site
+      console.log esthetic.format html, language: "html"
+
+  ]
+
+  process.exit if success then 0 else 1

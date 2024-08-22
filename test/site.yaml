@@ -1,0 +1,139 @@
+- type: page
+  key: home
+  name: Home
+  title: Welcome
+  template: templates/page/basic
+  content:
+  - home/header
+  - home/main
+  - home/footer
+  hints: {}
+- type: layout
+  key: home/header
+  name: Header
+  hints: {}
+  content:
+  - home/header/logo
+  - home/header/main-menu
+- type: image
+  key: home/header/logo
+  name: Logo
+  image:
+    url: https://pandastrike.com/shared/images/logo.png
+  hints: {}
+  content:
+  - home/header/logo/untitled-variant
+- type: navigation
+  key: home/header/main-menu
+  name: Main Nav
+  hints: {}
+  content:
+  - home/header/main-menu/about-us
+- type: link
+  key: home/header/main-menu/about-us
+  name: About Us Link
+  hints: {}
+  content:
+  - home/header/main-menu/about-us/icon
+  - home/header/main-menu/about-us/label
+- type: icon
+  key: home/header/main-menu/about-us/icon
+  name: About Us Icon
+  style: line
+  hints: {}
+  term: group
+- type: text
+  key: home/header/main-menu/about-us/label
+  name: About Us Label
+  text: About Us
+  hints: {}
+- type: layout
+  key: home/main
+  name: Main
+  hints: {}
+  content:
+  - home/main/splash
+  - home/main/benefits
+- type: layout
+  key: home/main/splash
+  name: Splash
+  hints:
+    width: widest
+    size: larger
+    alignment: center
+    proximity: roomy
+  content:
+  - home/main/splash/try-it
+  - home/main/splash/untitled-image
+- type: layout
+  key: home/main/benefits
+  name: Benefits
+  hints:
+    width: widest
+    proximity: roomy
+  content:
+  - home/main/benefits/magic
+  - home/main/benefits/no-learning-curve
+- type: link
+  key: home/main/splash/try-it
+  name: Try It
+  description: 
+  url: https://google.com
+  style: button
+  hints: {}
+  content:
+  - home/main/splash/try-it/text
+- type: text
+  key: home/main/splash/try-it/text
+  name: Try It
+  text: Try It For Free!
+  hints: {}
+- type: icon
+  key: home/main/benefits/magic
+  name: Abracadabra
+  style: line
+  hints: {}
+  term: magic
+- type: text
+  key: home/main/benefits/no-learning-curve
+  name: No Learning Curve
+  title: No Learning Curve
+  text: 'You don''t need to take a class to use our products. '
+  hints: {}
+- type: layout
+  key: home/footer
+  name: Footer
+  content:
+  - home/footer/copyright-notice
+  hints: {}
+- type: text
+  key: home/footer/copyright-notice
+  name: Copyright Notice
+  text: "&copy; 2024 DashKite Inc, All Rights Reserved"
+  hints: {}
+- type: image
+  key: assets/violin-front
+  name: Violin Front
+  image:
+    url: https://unsplash.com/photos/zimD1uT_XB0/download?ixid=M3wxMjA3fDB8MXxhbGx8OHx8fHx8fDJ8fDE3MjM1MTc4NjF8&force=true&w=640
+- type: image
+  key: assets/violin-side
+  name: Violin Side
+  image:
+    url: https://unsplash.com/photos/H0sU9DeMgAs/download?ixid=M3wxMjA3fDB8MXxhbGx8MTV8fHx8fHwyfHwxNzIzNTE3ODYxfA&force=true&w=640
+- hints: {}
+  image:
+    url: https://unsplash.com/photos/zimD1uT_XB0/download?ixid=M3wxMjA3fDB8MXxhbGx8OHx8fHx8fDJ8fDE3MjM1MTc4NjF8&force=true&w=640
+  key: home/main/splash/untitled-image
+  name: Untitled Image
+  type: image
+  description: ''
+- hints: {}
+  image:
+    url: https://placehold.co/600x400/orange/white
+  key: home/header/logo/untitled-variant
+  name: Dark Mode
+  type: variant
+  description: ''
+  mode: dark
+
