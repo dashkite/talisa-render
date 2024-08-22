@@ -5,7 +5,7 @@ import print from "@dashkite/amen-console"
 import esthetic from "esthetic";
 import { HTML } from "@dashkite/html-render"
 
-import render from "../src/index"
+import { render, preview } from "../src/index"
 import site from "./site"
 
 do ->
@@ -14,6 +14,10 @@ do ->
 
     test "render", ->
       html = HTML.render render "home", site
+      console.log esthetic.format html, language: "html"
+
+    test "preview", ->
+      html = HTML.render preview "home", site
       console.log esthetic.format html, language: "html"
 
   ]

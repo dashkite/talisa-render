@@ -1,6 +1,5 @@
 import unknown from "./unknown"
 import page from "./page"
-import preview from "./preview"
 import layout from "./layout"
 import navigation from "./navigation"
 import text from "./text"
@@ -12,7 +11,6 @@ import icon from "./icon"
 Renderers = {
   unknown
   page
-  preview
   layout
   navigation
   text

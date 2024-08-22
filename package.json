@@ -46,12 +46,14 @@
     "@dashkite/genie-clean": "link:../genie-clean",
     "@dashkite/genie-coffee": "link:../genie-coffee",
     "@dashkite/genie-module": "link:../genie-module",
+    "@dashkite/genie-stylus": "link:../genie-stylus",
     "@dashkite/genie-yaml": "link:../genie-yaml",
     "esthetic": "0.6.4-beta.1"
   },
   "dependencies": {
     "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "link:../joy",
+    "@dashkite/posh": "link:../posh",
     "@dashkite/talisa": "link:../talisa",
     "marked": "^14.0.0"
   }

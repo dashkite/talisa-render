@@ -27,7 +27,7 @@ generic render,
   Type.isString,
   Type.isArray,
   ( key, gadgets ) ->
-    if ( gadget = Gadgets.find key, gadgets )?
-      render gadget, gadgets
+    if ( target = Gadgets.find key, gadgets )?
+      render target, gadgets
 
 export default render

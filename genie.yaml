@@ -1,0 +1,10 @@
+stylus:
+  targets:
+    browser:
+      - preset: js
+        glob:
+          - src/**/*.styl
+    node:
+      - preset: js
+        glob:
+          - src/**/*.styl
