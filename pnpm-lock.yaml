@@ -11,6 +11,9 @@ importers:
       '@dashkite/html-render':
         specifier: link:../html-render
         version: link:../html-render
+      '@dashkite/joy':
+        specifier: link:../joy
+        version: link:../joy
       '@dashkite/talisa':
         specifier: link:../talisa
         version: link:../talisa
@@ -36,6 +39,9 @@ importers:
       '@dashkite/genie-coffee':
         specifier: link:../genie-coffee
         version: link:../genie-coffee
+      '@dashkite/genie-module':
+        specifier: link:../genie-module
+        version: link:../genie-module
       '@dashkite/genie-yaml':
         specifier: link:../genie-yaml
         version: link:../genie-yaml
