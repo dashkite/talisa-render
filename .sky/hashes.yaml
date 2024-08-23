@@ -4,12 +4,13 @@ build/browser/src/renderers/layout.js: IB0HJmPj
 build/browser/src/renderers/link.js: i_g7ZyUj
 build/browser/src/renderers/icon.js: fOnIDtKL
 build/browser/src/renderers/image.js: cWYLztlV
-build/browser/src/renderers/page.js: V99fDFX5
+build/browser/src/renderers/page.js: X35A6gWD
 build/browser/src/renderers/unknown.js: n9NG5Lg7
 build/browser/src/renderers/navigation.js: R_xwAptu
 build/browser/src/renderers/text.js: kgso1Bfk
 build/browser/src/renderers/preview.js: 9qJgXddq
 build/browser/src/index.js: ZLu8u9_b
 build/browser/src/renderers/theme.js: FqYpFWLD
-build/browser/src/helpers/preview.js: 8PI9zmFg
+build/browser/src/helpers/preview.js: 1HfzXAnG
 build/browser/src/helpers/theme.js: FqYpFWLD
+build/browser/src/helpers/gadgets.js: IGSyb_2k

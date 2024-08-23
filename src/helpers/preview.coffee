@@ -3,7 +3,8 @@ import * as Type from "@dashkite/joy/type"
 import { Gadget, Gadgets } from "@dashkite/talisa"
 import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
-import theme from "#helpers/theme"
+
+import css from "./gadgets"
 
 body = ( target, context ) ->
   for gadget in target.content
@@ -21,10 +22,11 @@ generic preview,
   ( Gadget.isType "page" ),
   Type.isArray,
   ( target, context ) ->
-    HTML.div class: "preview", [
-      # TODO remove once we have theme support
-      HTML.style theme
-      ( body target, context )...
+    [
+      HTML.style css
+      HTML.style target.theme
+      HTML.div class: "body",
+        body target, context
     ]
 
 generic preview,
