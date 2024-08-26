@@ -1,6 +1,6 @@
 import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
-import * as Posh from "@dashkite/posh"
+import * as Verve from "@dashkite/verve"
 
 
 body = ( target, context ) ->
@@ -15,8 +15,8 @@ page = ( target, context ) ->
     ]
     HTML.body [
       ( body target, context )...
-      HTML.style Posh.application
-      HTML.style Posh.hints
+      HTML.style Verve.application
+      HTML.style Verve.hints
       HTML.style target.theme
     ]
   ]

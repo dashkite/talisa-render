@@ -1,6 +1,6 @@
 import { generic } from "@dashkite/joy/generic"
 import * as Type from "@dashkite/joy/type"
-import { Gadget, Gadgets } from "@dashkite/talisa"
+import { Gadgets, Gadget } from "@dashkite/talisa"
 
 import Renderers from "../renderers"
 
@@ -15,8 +15,8 @@ render = generic
   description: "render a Talisa Page Gadget into HTML and CSS"
 
 generic render,
-  Type.isObject,
-  Type.isArray,
+  ( Type.isType Gadget),
+  ( Type.isType Gadgets ),
   ( gadget, gadgets ) ->
     if ( renderer = Renderers[ gadget.type ])?
       renderer gadget, gadgets
@@ -25,9 +25,9 @@ generic render,
 
 generic render,
   Type.isString,
-  Type.isArray,
+  ( Type.isType Gadgets ),
   ( key, gadgets ) ->
-    if ( target = Gadgets.find key, gadgets )?
+    if ( target = gadgets.get key )?
       render target, gadgets
 
 export default render

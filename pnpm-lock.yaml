@@ -14,12 +14,12 @@ importers:
       '@dashkite/joy':
         specifier: link:../joy
         version: link:../joy
-      '@dashkite/posh':
-        specifier: link:../posh
-        version: link:../posh
       '@dashkite/talisa':
         specifier: link:../talisa
         version: link:../talisa
+      '@dashkite/verve':
+        specifier: link:../verve
+        version: link:../verve
       marked:
         specifier: ^14.0.0
         version: 14.0.0

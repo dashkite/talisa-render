@@ -53,8 +53,8 @@
   "dependencies": {
     "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "link:../joy",
-    "@dashkite/posh": "link:../posh",
     "@dashkite/talisa": "link:../talisa",
+    "@dashkite/verve": "link:../verve",
     "marked": "^14.0.0"
   }
 }

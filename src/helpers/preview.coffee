@@ -13,14 +13,14 @@ body = ( target, context ) ->
 preview = generic name: "preview"
 
 generic preview,
-  Type.isObject,
-  Type.isArray,
+  ( Type.isType Gadget ),
+  ( Type.isType Gadgets ),
   ( target, context ) ->
     render target, context
 
 generic preview,
   ( Gadget.isType "page" ),
-  Type.isArray,
+  ( Type.isType Gadgets ),
   ( target, context ) ->
     [
       HTML.style css
@@ -31,9 +31,9 @@ generic preview,
 
 generic preview,
   Type.isString,
-  Type.isArray,
+  ( Type.isType Gadgets ),
   ( key, gadgets ) ->
-    if ( target = Gadgets.find key, gadgets )?
+    if ( target = gadgets.get key )?
       preview target, gadgets
 
 export default preview
