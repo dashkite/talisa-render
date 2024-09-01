@@ -33,6 +33,8 @@ Classes =
   size: ( value ) ->
     if value != "auto" then value
 
+  style: Fn.identity
+
   from: ( target ) ->
     join compact flatten do ->
       for key, value of target
