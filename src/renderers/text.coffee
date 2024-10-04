@@ -6,6 +6,8 @@ import { marked } from "marked"
 
 text = ( target, context ) ->
   HTML.div ( Attributes.from target ),
-    HTML.parse marked target.text
+    if target.text?
+      HTML.parse marked target.text
+    else ""
 
 export default text

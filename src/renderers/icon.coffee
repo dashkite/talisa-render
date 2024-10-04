@@ -1,9 +1,10 @@
 import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
-
-import { marked } from "marked"
+import Classes from "#helpers/classes"
 
 icon = ( target, context ) ->
-  HTML.i class: "ri-#{ target.icon }-#{ target.hints.style }"
+  HTML.div class: ( Classes.from target ), [
+    HTML.i class: "ri-#{ target.icon }-#{ target.hints.style }"
+  ]
 
 export default icon
