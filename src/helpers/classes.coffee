@@ -35,10 +35,25 @@ Classes =
 
   style: Fn.identity
 
-  from: ( target ) ->
+  font: ( value ) -> 
+    if value?
+      { face, pairing } = value
+      "font-#{ face ? 'system' } font-#{ pairing ? 'uniform' }"
+
+  color: ( value ) ->
+     if value?
+      { chroma, hue } = value
+      "chroma-#{ chroma ? 'blue' } hue-#{ hue ? 'auto' }"
+  
+  mixins: ( value ) ->
+    join compact do ->
+      for gadget in value
+        Classes.from gadget
+
+  from: ( gadget ) ->
     join compact flatten do ->
-      for key, value of target
+      for key, value of gadget
         if ( resolver = Classes[ key ])?
-          resolver value, target
+          resolver value, gadget
       
 export default Classes

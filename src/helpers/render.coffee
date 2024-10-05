@@ -2,32 +2,35 @@ import { generic } from "@dashkite/joy/generic"
 import * as Type from "@dashkite/joy/type"
 import { Gadgets, Gadget } from "@dashkite/talisa"
 
-import Renderers from "../renderers"
-
-
-# TODO how to handle errors
-#      - not a page gadget
-#      - key not found
-#      - ...
+import * as Renderers from "../renderers"
 
 render = generic 
   name: "render"
-  description: "render a Talisa Page Gadget into HTML and CSS"
+  description: "render a gadget into HTML and CSS"
 
 generic render,
   ( Type.isType Gadget),
-  ( Type.isType Gadgets ),
-  ( gadget, gadgets ) ->
+  ( gadget ) ->
     if ( renderer = Renderers[ gadget.type ])?
-      renderer gadget, gadgets
+      renderer gadget
     else
-      Renderers.unknown gadget, gadgets
+      console.warn "render: 
+        unknown gadget type [ #{ gadget.type } ]"
+      undefined
+
+generic render,
+  ( Gadget.withTypes Gadget.mixins ),
+  ( gadget ) -> undefined
 
 generic render,
   Type.isString,
   ( Type.isType Gadgets ),
   ( key, gadgets ) ->
-    if ( target = gadgets.get key )?
-      render target, gadgets
+    if ( gadget = gadgets.get key )?
+      render gadget
+    else
+      console.warn "render:
+        gadget not found: [ #{ key } ]"
+      undefined
 
 export default render

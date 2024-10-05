@@ -4,10 +4,10 @@ import Attributes from "#helpers/attributes"
 
 import { marked } from "marked"
 
-text = ( target, context ) ->
+text = ( target ) ->
   HTML.div ( Attributes.from target ),
     if target.text?
       HTML.parse marked target.text
     else ""
 
-export default text
+export { text }

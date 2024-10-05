@@ -3,37 +3,35 @@ import * as Type from "@dashkite/joy/type"
 import { Gadget, Gadgets } from "@dashkite/talisa"
 import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
+import Classes from "#helpers/classes"
 
 import css from "./gadgets"
 
-body = ( target, context ) ->
-  for gadget in target.content
-    render gadget, context
+body = ( target ) ->
+  for key in target.content
+    render key, target.$
 
 preview = generic name: "preview"
 
 generic preview,
   ( Type.isType Gadget ),
-  ( Type.isType Gadgets ),
-  ( target, context ) ->
-    render target, context
+  ( target ) -> render target
 
 generic preview,
   ( Gadget.isType "page" ),
-  ( Type.isType Gadgets ),
-  ( target, context ) ->
+  ( target ) ->
+    classes = Classes.from target
     [
       HTML.style css
-      HTML.style target.theme
-      HTML.div class: "body",
-        body target, context
+      HTML.style target.css if target.css?
+      HTML.div class: "body #{ classes }", body target
     ]
 
 generic preview,
   Type.isString,
   ( Type.isType Gadgets ),
   ( key, gadgets ) ->
-    if ( target = gadgets.get key )?
-      preview target, gadgets
+    if ( gadget = gadgets.get key )?
+      preview gadget
 
 export default preview

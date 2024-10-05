@@ -7,3 +7,43 @@ a
   //- these should probably rely on custom properties
   align-items baseline
   gap 0.5rem
+
+
+html, .body
+  --highlight oklch(70% var(--chroma) var(--hue))
+  --accent oklch( from var(-highlight) 50% c h)
+
+.font-classic
+  --base-font Iowan Old Style, Palatino Linotype, URW Palladio L, P052, serif
+
+  &.font-contrasting
+    --heading-font Seravek, Gill Sans Nova, Ubuntu, Calibri, DejaVu Sans, source-sans-pro, sans-serif
+
+.chroma-lowest
+  --chroma 0.05
+.chroma-lower
+  --chroma 0.10
+.chroma-low
+  --chroma 0.15
+.chroma-auto
+  --chroma 0.20
+.chroma-high
+  --chroma 0.25
+.chroma-higher
+  --chroma 0.30
+.chroma-highest
+  --chroma 0.35
+
+.hue-red
+  --hue 0
+.hue-orange
+  --hue 75
+.hue-yellow
+  --hue 150
+.hue-green
+  --hue 225
+.hue-blue
+  --hue 300
+.hue-purple
+  --hue 360
+

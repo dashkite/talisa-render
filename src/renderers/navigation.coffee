@@ -1,10 +1,10 @@
 import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
 
-navigation = ( target, context ) ->
+navigation = ( target ) ->
 
   HTML.nav do ->
-    for gadget in target.content
-      render gadget, context
+    for key in target.content
+      render key, target.$
 
-export default navigation
+export { navigation }

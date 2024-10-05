@@ -2,10 +2,10 @@ import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
 import Classes from "#helpers/classes"
 
-layout = ( target, context ) ->
+layout = ( target ) ->
 
   HTML.div class: ( Classes.from target ),
-    for gadget in target.content
-      render gadget, context
+    for key in target.content
+      render key, target.$
 
-export default layout
+export { layout }
