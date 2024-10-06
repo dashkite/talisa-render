@@ -12,8 +12,23 @@ a
 html, .body
   --chroma 0.00
   --hue 0
-  --highlight oklch(70% var(--chroma) var(--hue))
+  --highlight oklch(var(--lightness) var(--chroma) var(--hue))
   --accent oklch( from var(--highlight) 50% c h)
+
+.lightest
+  --lightness 80%
+.lighter
+  --lightness 70%
+.light
+  --lightness 60%
+.auto
+  --lightness 50%
+.dark
+  --lightness 40%
+.darker
+  --lightness 30%
+.darkest
+  --lightness 20%
 
 .chroma-lowest
   --chroma 0.05
@@ -33,18 +48,23 @@ html, .body
 .hue-red
   --hue 0
 .hue-orange
-  --hue 75
-.hue-yellow
-  --hue 150
+  --hue 60
+.hue-gold
+  --hue 120
 .hue-green
-  --hue 225
+  --hue 180
 .hue-blue
+  --hue 240
+.hue-violet
   --hue 300
-.hue-purple
-  --hue 360
 
-:root, :host
+:root, .body
+  // defaults
+  // TODO Posh also defines this but doesn't include :host
+  --copy-font var(--base-font)
+  --heading-font var(--base-font)
   // adapted from https://open-props.style/#typography
+  // based on Modern Font Stacks: https://modernfontstacks.com/
   --font-stack-system-ui system-ui, sans-serif
   --font-stack-transitional Charter, Bitstream Charter, Sitka Text, Cambria, serif
   --font-stack-old-style Iowan Old Style, Palatino Linotype, URW Palladio L, P052, serif
@@ -60,50 +80,56 @@ html, .body
   --font-stack-antique Superclarendon, Bookman Old Style, URW Bookman, URW Bookman L, Georgia Pro, Georgia, serif
   --font-stack-didone Didot, Bodoni MT, Noto Serif Display, URW Palladio L, P052, Sylfaen, serif
   --font-stack-handwritten Segoe Print, Bradley Hand, Chilanka, TSCu_Comic, casual, cursive
-
-.font-antique
-  --base-font var(--font-stack-antique)
-  // &.font-uniform
-  // &.font-harmonious
-  // &.font-contrasting
-  // &.font-adventurous
-  // &.font-dynamic
-.font-classic
-  --base-font var(--font-stack-old-style)
-  // &.font-uniform
-  // &.font-harmonious
-  // &.font-contrasting
-  // &.font-adventurous
-  // &.font-dynamic
-.font-neo-classic
-  --base-font var(--font-stack-didone)
-  // &.font-uniform
-  // &.font-harmonious
-  // &.font-contrasting
-  // &.font-adventurous
-  // &.font-dynamic
-.font-modern
+  
+  --font-stack-classic var(--font-stack-antique)
+  // --font-stack-transitional
+  --font-stack-slab var(--font-stack-slab-serif)
+  --font-stack-system var(--font-stack-system-ui)
+  --font-stack-humanist var(--font-stack-classical-humanist)
+  --font-stack-geometric var(--font-stack-geometric-humanist)
+  --font-stack-modern var(--font-stack-neo-grotesque)
+  
+.base-font-classic
+  --base-font var(--font-stack-classic)
+.base-font-transitional
+  --base-font var(--font-stack-transitional)
+.base-font-slab
+  --base-font var(--font-stack-slab)
+.base-font-system
+  --base-font var(--font-stack-system)
+.base-font-humanist
   --base-font var(--font-stack-humanist)
-  // &.font-uniform
-  // &.font-harmonious
-  // &.font-contrasting
-  // &.font-adventurous
-  // &.font-dynamic
-.font-post-modern
-  --base-font var(--font-stack-industrial)
-  // &.font-uniform
-  // &.font-harmonious
-  // &.font-contrasting
-  // &.font-adventurous
-  // &.font-dynamic
-.font-futurist
-  --base-font var(--font-stack-neo-grotesque)
-  // &.font-uniform
-  &.font-harmonious
-    --copy-font var(--font-stack-system-ui)
-  &.font-contrasting
-    --copy-font var(--font-stack-transitional)
-  &.font-adventurous
-    --heading-font var(--font-stack-industrial)
-  &.font-dynamic
-    --copy-font var(--font-stack-geometric-humanist)
+.base-font-geometric
+  --base-font var(--font-stack-geometric)
+.base-font-modern
+  --base-font var(--font-stack-modern)
+
+.heading-font-classic
+  --heading-font var(--font-stack-classic)
+.heading-font-transitional
+  --heading-font var(--font-stack-transitional)
+.heading-font-slab
+  --heading-font var(--font-stack-slab)
+.heading-font-system
+  --heading-font var(--font-stack-system)
+.heading-font-humanist
+  --heading-font var(--font-stack-humanist)
+.heading-font-geometric
+  --heading-font var(--font-stack-geometric)
+.heading-font-modern
+  --heading-font var(--font-stack-modern)
+
+.copy-font-classic
+  --copy-font var(--font-stack-classic)
+.copy-font-transitional
+  --copy-font var(--font-stack-transitional)
+.copy-font-slab
+  --copy-font var(--font-stack-slab)
+.copy-font-system
+  --copy-font var(--font-stack-system)
+.copy-font-humanist
+  --copy-font var(--font-stack-humanist)
+.copy-font-geometric
+  --copy-font var(--font-stack-geometric)
+.copy-font-modern
+  --copy-font var(--font-stack-modern)

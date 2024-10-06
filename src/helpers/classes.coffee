@@ -37,13 +37,15 @@ Classes =
 
   font: ( value ) -> 
     if value?
-      { face, pairing } = value
-      "font-#{ face ? 'system' } font-#{ pairing ? 'uniform' }"
+      { base, heading, copy } = value
+      "base-font-#{ base } 
+        heading-font-#{ heading} 
+        copy-font-#{ copy }"
 
   color: ( value ) ->
      if value?
-      { chroma, hue } = value
-      "chroma-#{ chroma ? 'blue' } hue-#{ hue ? 'auto' }"
+      { chroma, hue, lightness } = value
+      "chroma-#{ chroma } hue-#{ hue  } #{ lightness }"
   
   mixins: ( value ) ->
     join compact do ->
