@@ -1,6 +1,5 @@
 import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
-import * as Verve from "@dashkite/verve"
 
 # TODO add classes
 
@@ -16,9 +15,6 @@ page = ( target ) ->
     ]
     HTML.body [
       ( body target )...
-      HTML.style Verve.application
-      HTML.style Verve.hints
-      HTML.style target.theme
     ]
   ]
 

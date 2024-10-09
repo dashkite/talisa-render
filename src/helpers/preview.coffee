@@ -5,8 +5,6 @@ import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
 import Classes from "#helpers/classes"
 
-import css from "./gadgets"
-
 body = ( target ) ->
   for key in target.content
     render key, target.$
@@ -22,7 +20,6 @@ generic preview,
   ( target ) ->
     classes = Classes.from target
     [
-      HTML.style css
       HTML.style target.css if target.css?
       HTML.div class: "body #{ classes }", body target
     ]
