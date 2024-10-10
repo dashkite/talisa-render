@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@dashkite/format-text':
+        specifier: link:../format-text
+        version: link:../format-text
       '@dashkite/html-render':
         specifier: link:../html-render
         version: link:../html-render

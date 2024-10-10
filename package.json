@@ -51,6 +51,7 @@
     "esthetic": "0.6.4-beta.1"
   },
   "dependencies": {
+    "@dashkite/format-text": "link:../format-text",
     "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "link:../joy",
     "@dashkite/talisa": "link:../talisa",
