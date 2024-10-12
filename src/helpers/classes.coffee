@@ -2,7 +2,7 @@ import * as Fn from "@dashkite/joy/function"
 import * as Arr from "@dashkite/joy/array"
 
 flatten = ( array ) -> array.flat Infinity
-compact = ( array ) -> array.filter ( value ) -> value?
+compact = ( array ) -> array.filter ( value ) -> value? && value != ""
 join = ( array ) -> array.join " "
 
 Classes =
@@ -11,7 +11,13 @@ Classes =
 
   subtype: Fn.identity
 
+  # TODO this gets phased out
   hints: ( value, target ) ->
+    for key, _value of value
+      if ( resolver = Classes[ key ])?
+        resolver _value, target
+
+  brief: ( value, target ) ->
     for key, _value of value
       if ( resolver = Classes[ key ])?
         resolver _value, target
@@ -22,7 +28,7 @@ Classes =
 
   alignment: ( value ) -> "align-#{ value ? 'start' }"
 
-  wrap: ( value ) -> if value then "wrap" else "no-wrap"
+  wrap: ( value ) -> if value then "wrap"
 
   proximity: ( value ) ->
     if value != "auto" then value

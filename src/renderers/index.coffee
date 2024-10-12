@@ -1,5 +1,5 @@
 export * from "./page"
-export * from "./layout"
+export * from "./container"
 export * from "./navigation"
 export * from "./text"
 export * from "./image"
