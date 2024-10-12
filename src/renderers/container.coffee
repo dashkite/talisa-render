@@ -1,10 +1,10 @@
 import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
-import Classes from "#helpers/classes"
+import Attributes from "#helpers/attributes"
 
 container = ( target ) ->
 
-  HTML.div class: ( Classes.from target ),
+  HTML.div ( Attributes.from target ),
     for key in target.content
       render key, target.$
 

@@ -41,17 +41,17 @@ Classes =
 
   style: Fn.identity
 
-  font: ( value ) -> 
+  fonts: ( value ) -> 
     if value?
       { base, heading, copy } = value
       "base-font-#{ base } 
         heading-font-#{ heading} 
         copy-font-#{ copy }"
 
-  color: ( value ) ->
-     if value?
-      { chroma, hue, lightness } = value
-      "chroma-#{ chroma } hue-#{ hue  } #{ lightness }"
+  # colors: ( value ) ->
+  #   if value?
+  #     { chroma, hue, lightness } = value
+  #     "chroma-#{ chroma } hue-#{ hue  } #{ lightness }"
   
   mixins: ( value ) ->
     join compact do ->
