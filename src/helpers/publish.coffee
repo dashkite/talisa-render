@@ -3,19 +3,19 @@ import * as Type from "@dashkite/joy/type"
 import { Gadget, Gadgets } from "@dashkite/talisa"
 import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
-import Attributes from "#helpers/attributes"
+import Classes from "#helpers/classes"
 
-preview = generic name: "preview"
+publish = generic name: "publish"
 
-generic preview,
-  ( Type.isType Gadget ),
-  ( target ) -> render target, mode: "preview"
+generic publish,
+  ( Gadget.isType "page" ),
+  ( target ) -> render target, mode: "publish"
 
-generic preview,
+generic publish,
   Type.isString,
   ( Type.isType Gadgets ),
   ( key, gadgets ) ->
     if ( gadget = gadgets.get key )?
-      preview gadget
+      publish gadget
 
-export default preview
+export default publish

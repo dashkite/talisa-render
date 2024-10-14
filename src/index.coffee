@@ -1,5 +1,4 @@
-import render from "#helpers/render"
+import publish from "#helpers/publish"
 import preview from "#helpers/preview"
 
-export default render
-export { preview, render }
+export { preview, publish }

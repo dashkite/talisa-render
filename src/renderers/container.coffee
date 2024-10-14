@@ -4,7 +4,9 @@ import Attributes from "#helpers/attributes"
 
 container = ( target ) ->
 
-  HTML.div ( Attributes.from target ),
+  tag = target.tag ? "div"
+
+  HTML[ tag ] ( Attributes.from target ),
     for key in target.content
       render key, target.$
 

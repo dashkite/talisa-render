@@ -10,9 +10,14 @@ render = generic
 
 generic render,
   ( Type.isType Gadget),
-  ( gadget ) ->
+  ( gadget ) -> render gadget, {}
+
+generic render,
+  ( Type.isType Gadget),
+  ( Type.isObject ),
+  ( gadget, options ) ->
     if ( renderer = Renderers[ gadget.type ])?
-      renderer gadget
+      renderer gadget, options
     else
       console.warn "render: 
         unknown gadget type [ #{ gadget.type } ]"

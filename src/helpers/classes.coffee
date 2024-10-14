@@ -54,6 +54,9 @@ Classes =
   #     "chroma-#{ chroma } hue-#{ hue  } #{ lightness }"
   
   border: ( value ) -> "border-#{ value }"
+
+  # layout: ( value ) ->
+
   mixins: ( value ) ->
     join compact do ->
       for gadget in value
