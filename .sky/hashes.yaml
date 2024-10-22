@@ -2,7 +2,7 @@ build/browser/src/renderers/text.js: 1s2YNRAU
 build/browser/src/helpers/publish.js: pthMQzqk
 build/browser/src/renderers/link.js: txEmlkzP
 build/browser/src/renderers/navigation.js: Jmbn0JUf
-build/browser/src/index.js: Yd3IwEd2
+build/browser/src/index.js: YqsP4Gx7
 build/browser/src/renderers/page.js: QW936dKP
 build/browser/src/renderers/icon.js: OqlJiIG7
 build/browser/src/helpers/preview.js: uXbRQ3cA
@@ -13,3 +13,5 @@ build/browser/src/renderers/container.js: L-8O72Cm
 build/browser/src/helpers/render.js: KOWE6yIZ
 build/browser/src/helpers/styles.js: dFJw7sfT
 build/browser/src/helpers/classes.js: mzOvQ--c
+build/browser/src/renderers/icon/index.js: UXCIwsRL
+build/browser/src/renderers/icon/names.js: tt68AKSK
