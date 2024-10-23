@@ -28,7 +28,9 @@ Classes =
 
   alignment: ( value ) -> "align-#{ value ? 'start' }"
 
-  wrap: ( value ) -> if value then "wrap"
+  wrap: ( value, target ) -> 
+    console.log { wrap: value, target }
+    if value then "wrap"
 
   proximity: ( value ) ->
     if value != "auto" then value
