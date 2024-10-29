@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@dashkite/format-text": "link:../format-text",
+    "@dashkite/generic": "link:../generic",
     "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "link:../joy",
     "@dashkite/talisa": "link:../talisa",

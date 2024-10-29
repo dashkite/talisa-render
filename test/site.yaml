@@ -1,19 +1,19 @@
 - key: gadget-1
   type: page
   name: Home
-  hints: {}
+  brief: {}
+  mixins:
+    layout: gadget-2
   content:
-    - gadget-2
     - gadget-3
 
 - key: gadget-2
   type: layout
   name: Header
-  hints: {}
-  content: []
 
 - key: gadget-3
-  type: layout
+  type: container
   name: Main
-  hints: {}
+  brief: {}
+  mixins: {}
   content: []

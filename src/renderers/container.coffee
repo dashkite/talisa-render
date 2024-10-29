@@ -2,9 +2,9 @@ import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
 import Attributes from "#helpers/attributes"
 
-container = ( target ) ->
+container = ( target, { tag }) ->
 
-  tag = target.tag ? "div"
+  tag ?= "div"
 
   HTML[ tag ] ( Attributes.from target ),
     for key in target.content

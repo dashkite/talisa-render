@@ -8,22 +8,26 @@ import esthetic from "esthetic"
 import { HTML } from "@dashkite/html-render"
 
 import { render, preview } from "../src/index"
+
 import site from "./site"
+import expect from "./expect"
 
 gadgets = Gadgets.from site
-home = ( gadgets.find Gadget.withByname "home" )
+[ home ] = gadgets.pages
 
 do ->
 
   print await test "Talisa Render", [
 
     test "render", ->
-      html = HTML.render render home, gadgets
-      console.log esthetic.format html, language: "html"
+      html = HTML.render render home
+      assert.equal expect.render,
+        esthetic.format html, language: "html"
 
     test "preview", ->
-      html = HTML.render preview home, gadgets
-      console.log esthetic.format html, language: "html"
+      html = HTML.render preview home
+      assert.equal expect.preview,
+        esthetic.format html, language: "html"
 
   ]
 

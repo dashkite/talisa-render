@@ -1,0 +1,5 @@
+render: &render >-
+  <div name="home" class="page">
+    <header name="main" class="container"></header>
+  </div>
+preview: *render

@@ -11,6 +11,9 @@ importers:
       '@dashkite/format-text':
         specifier: link:../format-text
         version: link:../format-text
+      '@dashkite/generic':
+        specifier: link:../generic
+        version: link:../generic
       '@dashkite/html-render':
         specifier: link:../html-render
         version: link:../html-render

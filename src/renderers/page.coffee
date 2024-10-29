@@ -1,6 +1,7 @@
 import { HTML } from "@dashkite/html-render"
 import render from "#helpers/render"
 import Attributes from "#helpers/attributes"
+import  { Gadgets } from "@dashkite/talisa"
 
 Frame =
 
@@ -17,22 +18,17 @@ Frame =
     ]
 
 page = ( target, { mode }) ->
-  layout = target.mixins.find ( mixin ) -> mixin?.type == "layout"
+  mode ?= "preview"
+  gadgets = target.$
+  content = target.content.map ( key ) -> gadgets.get key
+  layout = if target.mixins.layout? then gadgets.get target.mixins.layout
   Frame[ mode ] target, do ->
     if layout?
-      [ header, main, footer ] = target.elements
-      # TODO come up with better solution to controlling the tag
-      #      ex: render that takes options?
-      header.tag = "header"
-      main.tag = "main"
-      footer.tag = "footer"
-      [
-        render header
-        render main
-        render footer
-      ]
+      [ header, main, footer ] = content
+      for tag, block of { header, main, footer } when block?
+        render block, { tag }
     else
-      for key in target.content
-        render key, target.$
+      for gadget in content
+        render gadget
 
 export { page }
