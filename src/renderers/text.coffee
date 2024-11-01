@@ -6,8 +6,8 @@ import { marked } from "marked"
 
 text = ( target ) ->
   HTML.div ( Attributes.from target ),
-    if target.text?
-      HTML.parse marked target.text
+    if target.brief.text?
+      HTML.parse marked target.brief.text
     else ""
 
 export { text }

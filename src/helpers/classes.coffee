@@ -29,7 +29,6 @@ Classes =
   alignment: ( value ) -> "align-#{ value ? 'start' }"
 
   wrap: ( value, target ) -> 
-    console.log { wrap: value, target }
     if value then "wrap"
 
   proximity: ( value ) ->
@@ -59,10 +58,11 @@ Classes =
 
   # layout: ( value ) ->
 
-  mixins: ( value ) ->
+  mixins: ( mixins, gadget ) ->
+    gadgets = gadget.$
     join compact do ->
-      for gadget in value
-        Classes.from gadget
+      for key in Object.values mixins
+        Classes.from gadgets.get key
 
   from: ( gadget ) ->
     join compact flatten do ->

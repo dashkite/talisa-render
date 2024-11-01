@@ -11,11 +11,18 @@ link = ( target ) ->
   # url = target.url ? do ->
   #   gadget = target.$.find Gadgets.withName target.page
   #   gadget?.url
+  # OR...just intercept the clicks in the preview component?
+  { url, page } = target.brief
 
   HTML.a 
     name: target.byname
     class: Classes.from target
-    href: target.url ? ( "##{ Format.dashed target.page }" if target.page? )
+    href: if url?
+      url
+    else if page?
+      "/#{ Format.dashed page }"
+    else
+      "#"
     for key in target.content
       render key, target.$
 
