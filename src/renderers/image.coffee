@@ -6,7 +6,7 @@ image = ( target ) ->
     HTML.picture [
       # TODO shouldn't be necessary to provide a fallback here
       HTML.img
-        src: target.image?.url ? 
+        src: target.brief.image?.url ? 
           "https://placehold.co/200x150/orange/white"
     ]
   ]
