@@ -49,11 +49,6 @@ Classes =
         heading-font-#{ heading} 
         copy-font-#{ copy }"
 
-  # colors: ( value ) ->
-  #   if value?
-  #     { chroma, hue, lightness } = value
-  #     "chroma-#{ chroma } hue-#{ hue  } #{ lightness }"
-  
   border: ( value ) -> "border-#{ value }"
 
   # layout: ( value ) ->

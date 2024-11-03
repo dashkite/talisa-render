@@ -11,7 +11,6 @@ Frame =
   publish: ( page, body ) ->
     HTML.html [
       HTML.head [
-        # TODO add CSS, page preview, ...
         HTML.title target.title
       ]
       HTML.body ( Attributes.from page ), body

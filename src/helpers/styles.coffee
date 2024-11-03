@@ -15,10 +15,11 @@ Styles =
   color: ( value ) ->
     "--input-color: #{ value }"
   
-  mixins: ( mixins ) ->
+  mixins: ( mixins, gadget ) ->
+    gadgets = gadget.$
     join compact do ->
-      for mixin in mixins
-        Styles.from mixin
+      for mixin in Object.values mixins
+        Styles.from gadgets.get mixin
 
   from: ( gadget ) ->
     join compact flatten do ->

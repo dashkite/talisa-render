@@ -1,5 +1,8 @@
 render: &render >-
-  <div name="home" class="layout page">
+  <div
+    name="home"
+    style="--input-color: #c9c"
+    class="layout colors page">
     <header name="main" class="container"></header>
   </div>
 preview: *render
