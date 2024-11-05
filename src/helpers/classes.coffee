@@ -51,7 +51,9 @@ Classes =
 
   border: ( value ) -> "border-#{ value }"
 
-  # layout: ( value ) ->
+  header: ( value ) -> "header" if value
+  footer: ( value ) -> "footer" if value
+  aside: ( value ) -> "aside" if value
 
   mixins: ( mixins, gadget ) ->
     gadgets = gadget.$

@@ -23,9 +23,21 @@ page = ( target, { mode }) ->
   layout = if target.mixins.layout? then gadgets.get target.mixins.layout
   Frame[ mode ] target, do ->
     if layout?
-      [ header, main, footer ] = content
-      for tag, block of { header, main, footer } when block?
-        render block, { tag }
+      if layout.brief.header
+        header = content.shift()
+      main = content.shift()
+      if layout.brief.aside
+        aside = content.shift()
+      if layout.brief.footer
+        footer = content.shift()
+
+      [
+        render header, tag: "header" if header?
+        render main, tag: "main"
+        render aside, tag: "aside" if aside?
+        render footer, tag: "footer" if footer? 
+      ]
+
     else
       for gadget in content
         render gadget
