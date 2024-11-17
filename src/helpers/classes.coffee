@@ -42,13 +42,6 @@ Classes =
 
   style: Fn.identity
 
-  fonts: ( value ) -> 
-    if value?
-      { base, heading, copy } = value
-      "base-font-#{ base } 
-        heading-font-#{ heading} 
-        copy-font-#{ copy }"
-
   border: ( value ) -> "border-#{ value }"
 
   header: ( value ) -> "header" if value

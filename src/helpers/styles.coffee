@@ -14,6 +14,11 @@ Styles =
 
   color: ( value ) ->
     "--input-color: #{ value }"
+
+  fonts: ({ heading, copy, base }) ->
+    "--heading-font: '#{ heading }';
+      --copy-font: '#{ copy }';
+      --base-font: '#{ base }'"
   
   mixins: ( mixins, gadget ) ->
     gadgets = gadget.$
