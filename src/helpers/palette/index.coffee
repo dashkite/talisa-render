@@ -1,6 +1,6 @@
-import { producer as P } from "@dashkite/colorist"
+import Producer from "./producer"
 # import { CanvasImage, getPalette } from "@dashkite/color-thief"
-import families from "./families"
+# import families from "./families"
 
 Cache =
 
@@ -30,22 +30,15 @@ Palette =
     # if chroma < 0.2
     #   create grayscale theme
     # else
-    base = P.monochromatic.create state.color
-    preset = base.selectPreset 
-      mode: "dark"
-      preset: families.find ( name ) -> name == state.family
-    palette = base.select
-      mode: "dark"
-      intensity: preset.chromaMultiplier
-      index: preset.producerIndex
-    P.fromPalette.create palette
+    Producer.make state
 
   from: cache ( state ) ->
     Palette
       .producer state
       .select
         mode: "dark"
-        intensity: state.intensity
+        intensity: ( state.intensity / 100 )
+        gradient: ( state.gradient / 100 )
         index: state.scheme
 
   get: ( name, palette ) ->

@@ -23,8 +23,8 @@
       "node": "./build/node/src/index.js"
     },
     "./*": {
-      "browser": "./build/browser/src/helpers/*.js",
-      "node": "./build/node/src/helpers/*.js"
+      "browser": "./build/browser/src/helpers/*/index.js",
+      "node": "./build/node/src/helpers/*/index.js"
     }
   },
   "imports": {

@@ -16,15 +16,19 @@ Styles =
   # TODO can we avoid setting the color/background directly?
   color: ( specifier ) ->
     palette = Palette.from specifier
-    background = Palette.get "background", palette
+    background = 
+      start: Palette.get "background-start", palette
+      stop: Palette.get "background-stop", palette
     foreground = Palette.get "foreground", palette
-    highlight = Palette.get "highlight", palette
+    highlight = 
+      start: Palette.get "highlight-start", palette
+      stop: Palette.get "highlight-stop", palette
     # TODO generat separate accent color
-    accent = Palette.get "highlight", palette
-    "--background: #{ background };
+    accent = Palette.get "accent", palette
+    "--background: linear-gradient(#{ background.start }, #{ background.stop });
     --foreground: #{ foreground };
-    --highlight: #{ highlight };
-    --accent: #{ accent };
+    --highlight: linear-gradient(#{ highlight.start }, #{ highlight.stop });
+    --accent: #{ highlight.start };
     color: var(--foreground);
     background: var(--background);"
 
