@@ -13,29 +13,11 @@ Styles =
       if ( resolver = Styles[ key ])?
         resolver _value, target
 
-  # TODO can we avoid setting the color/background directly?
   color: ( specifier ) ->
-    palette = Palette.from specifier
-    background = 
-      color: Palette.get "background", palette
-      start: Palette.get "background-start", palette
-      stop: Palette.get "background-stop", palette
-    foreground = Palette.get "foreground", palette
-    highlight = 
-      color: Palette.get "highlight", palette
-      start: Palette.get "highlight-start", palette
-      stop: Palette.get "highlight-stop", palette
-    # TODO generat separate accent color
-    accent = Palette.get "accent", palette
-    "--background-color:#{ background.color };
-      --background: linear-gradient(#{ background.start }, #{ background.stop });
-      --foreground: #{ foreground };
-      --highlight-color: #{ highlight.color };
-      --highlight: linear-gradient(#{ highlight.start }, #{ highlight.stop });
-      --accent: #{ highlight.start };
-      color: var(--foreground);
-      background: var(--background);"
-
+    # TODO remove once we get this from the app
+    specifier.mode ?= "dark"
+    Palette.toCSS Palette.from specifier
+    
   fonts: ({ heading, copy, base }) ->
     "--heading-font: '#{ heading }';
       --copy-font: '#{ copy }';

@@ -8,161 +8,92 @@ C = Colorist.color
 P = Colorist.palette
 S = Colorist.space
 
+L =
+  dark:
+    min: 0
+    max: 0.2
+  light:
+    min: 0.8
+    max: 1
+
 rotate = ( angle, color ) ->
   do Fn.pipe [ 
     C.start color
     C.add "h", angle
   ]
 
-filter = ({ background, foreground, highlight, accent }) ->
-  a = C.absoluteContrast background, foreground
-  return false if a < 60
-    
-  # b = C.absoluteContrast background, highlight
-  # return false if b < 60
-   
-  true
+adjust = ( color, intensity ) ->
+  do Fn.pipe [
+    C.start color
+    C.multiply "c", intensity
+  ]
+
+_invert =
+  dark: ( color ) -> Math.max L.light.min, ( 1 - color.l )
+  light: ( color ) -> Math.min L.dark.max, ( 1 - color.l )
+
+invert = ( color, mode ) ->
+  do Fn.pipe [
+    C.start color
+    C.set "l", ( _invert[ mode ] color )
+  ]
+
+contrast = ({ background, foreground, highlight, accent }) ->
+  ( 60 < ( C.absoluteContrast background, foreground )) &&
+    ( 60 < ( C.absoluteContrast background, highlight ))
+
 
 sort = ( ax ) -> 
-  ax.sort ( A, B ) ->
-    if A.background.l < B.background.l
-      -1
-    else if A.background.l > B.background.l
-      1
-    else
-      0
+  ax.sort ( A, B ) -> A.background.l - B.background.l
 
-createLight = ( color ) ->
-  backgrounds = S.traceArray
-    type: "LCSweetspot"
-    options:
-      color: C.clone color
-      chromaRatio: 1
-      minLightness: 0.7
-      maxLightness: 1
-      deltaE: 24
-  
-  # foregrounds = S.traceArray
-  #   type: "LCSweetspot"
-  #   options:
-  #     color: C.clone color
-  #     chromaRatio: 1
-  #     minLightness: 0
-  #     maxLightness: 1
-  #     deltaE: 24
-  
-  # highlights = S.traceArray
-  #   name: "highlight"
-  #   type: "LCSweetspot"
-  #   options:
-  #     color: C.clone color
-  #     chromaRatio: 1
-  #     minLightness: 0.2
-  #     maxLightness: 1
-  #     deltaE: 24
+generate = ( mode, color ) ->
 
-  results = []
-  for background in backgrounds
-    foreground = rotate 180, background
-    highlight = rotate 30, foreground
-    accent = rotate 30, highlight
-    palette = { background, foreground, highlight, accent }
-    if ( filter palette )
-      results.push palette 
-  results
-
-createDark = ( color ) ->
-  backgrounds = S.traceArray
-    type: "LCSweetspot"
-    options:
-      color: C.clone color
-      chromaRatio: 1
-      minLightness: 0
-      maxLightness: 0.3
-      deltaE: 12
-  
-  # foregrounds = S.traceArray
-  #   type: "LCSweetspot"
-  #   options:
-  #     color: C.clone color
-  #     chromaRatio: 1
-  #     minLightness: 0
-  #     maxLightness: 1
-  #     deltaE: 12
-  
-  # highlights = S.traceArray
-  #   type: "LCSweetspot"
-  #   options:
-  #     color: C.clone color
-  #     chromaRatio: 1
-  #     minLightness: 0
-  #     maxLightness: 1
-  #     deltaE: 24
-  
-  # results = []
-  # for background in backgrounds
-  #   for foreground in foregrounds
-  #     for highlight in highlights
-  #       colors = filter { background, foreground, highlight }
-  #       if colors?
-  #         results.push colors 
-  # results
-
-  results = []
-  foreground = do Fn.pipe [
-    C.start color
-    C.set "l", Math.max 0.9, color.l
-  ]
-  highlight = rotate 15, foreground
+  highlight = C.clone color
   accent = rotate 15, highlight
+
+  backgrounds = S.traceArray
+    type: "LCSweetspot"
+    options:
+      color: C.clone color
+      chromaRatio: 1
+      minLightness: L[ mode ].min
+      maxLightness: L[ mode ].max
+      deltaE: 12
+
+  candidates = []
   for background in backgrounds
+    foreground = invert background, mode
     palette = { background, foreground, highlight, accent }
-    results.push palette if filter palette
+    candidates.push palette
+
+  results = []
+  i = 0
+  while (( results.length < 5 ) && ( highlight.l < 1 ))
+    highlight.set "l", highlight.l + i
+    results = candidates.filter contrast
+    i = 0.1
   results
+
+  sort results
 
 class Producer
-  constructor: ({ @color }) ->
-    @sweetspot = S.getSweetspot @color
+
+  constructor: ({ @color }) -> @colors = {}
   
-  @make: ({ color }) ->
-    new Producer color: C.clone color
+  @make: ( specifier ) -> new Producer specifier
 
-  Meta.mixin @::, [
-    Meta.getters
-      light: -> @_light ?= sort createLight @color
-      dark: -> @_dark ?= sort createDark @color
-  ]
-
-  select: ({ mode, gradient, intensity, index }) ->
-
-    base = @[ mode ]
-
-    index = Math.round ( base.length - 1 ) * index
-
-    console.log { index, base }
-
-    colors = base[ index ]
+  select: ({ mode, gradient, intensity, background }) ->
+    
+    @colors[ mode ] ?= generate mode, @color
+    index = Math.round ( @colors[ mode ].length - 1 ) * background
+    colors = @colors[ mode ][ index ]
 
     palette = do Fn.pipe [
       P.start mode
-      P.set "base", @color
-      P.set "sweetspot", @sweetspot
-      P.set "background", do Fn.pipe [
-        C.start colors.background
-        C.multiply "c", intensity
-      ]
-      P.set "foreground", do Fn.pipe [
-        C.start colors.foreground
-        C.multiply "c", intensity
-      ]
-      P.set "highlight", do Fn.pipe [
-        C.start colors.highlight
-        C.multiply "c", intensity
-      ]
-      P.set "accent", do Fn.pipe [ 
-        C.start colors.accent
-        C.multiply "c", intensity
-      ]
+      P.set "background", adjust colors.background, intensity
+      P.set "foreground", adjust colors.foreground, intensity
+      P.set "highlight", adjust colors.highlight, intensity 
+      P.set "accent", adjust colors.accent, intensity
     ]
 
     Gradients.addStops {  

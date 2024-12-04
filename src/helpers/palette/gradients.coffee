@@ -95,7 +95,6 @@ class Producer
       C.start start
       C.set "l", start.l + adjustment
     ]
-    console.log { start, stop }
     P.set "#{ name }-start", start, palette
     P.set "#{ name }-stop", stop, palette
     palette
@@ -104,5 +103,6 @@ class Producer
     for name in names
       @addStop { name, gradient, palette }
     palette
+
 
 export default Producer

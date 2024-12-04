@@ -1,6 +1,4 @@
 import Producer from "./producer"
-# import { CanvasImage, getPalette } from "@dashkite/color-thief"
-# import families from "./families"
 
 Cache =
 
@@ -26,22 +24,25 @@ cache = ( f ) ->
 
 Palette =
 
-  producer: ( state ) ->
-    # if chroma < 0.2
-    #   create grayscale theme
-    # else
-    Producer.make state
+  from: cache ({ color, specifier... }) ->
+    Producer
+      .make { color }
+      .select specifier
 
-  from: cache ( state ) ->
-    Palette
-      .producer state
-      .select
-        mode: "dark"
-        intensity: ( state.intensity / 100 )
-        gradient: ( state.gradient / 100 )
-        index: ( state.scheme / 100 )
+  toCSS: ( palette ) ->
+    result = []
+    for [ name, { color }] from palette.slots
+      if ( palette.get "#{ name }-start" )?
+        result.push "--#{ name }-color: #{ color }" 
+        result.push "--#{ name }:
+          linear-gradient(var(--#{ name }-start), var(--#{ name }-stop))"
+      else
+        result.push "--#{ name }-color: #{ color }"
+        result.push "--#{ name }: var(--#{ name }-color)"
 
-  get: ( name, palette ) ->
-    palette.get( name ).color.toString()
+    result.push "color: var(--foreground-color);"
+    result.push "background: var(--background);"
+    ( result.join "; " ) + ";"
+
 
 export default Palette
