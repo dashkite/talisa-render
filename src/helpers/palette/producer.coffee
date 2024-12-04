@@ -46,10 +46,9 @@ contrast = ({ background, foreground, highlight, accent }) ->
 sort = ( ax ) -> 
   ax.sort ( A, B ) -> A.background.l - B.background.l
 
-generate = ( mode, color ) ->
+reverse = ( mode ) -> if mode == "dark" then "light" else "dark"
 
-  highlight = C.clone color
-  accent = rotate 15, highlight
+generate = ( mode, color ) ->
 
   backgrounds = S.traceArray
     type: "LCSweetspot"
@@ -60,20 +59,23 @@ generate = ( mode, color ) ->
       maxLightness: L[ mode ].max
       deltaE: 12
 
-  candidates = []
-  for background in backgrounds
-    foreground = invert background, mode
-    palette = { background, foreground, highlight, accent }
-    candidates.push palette
+  highlights = S.traceArray
+    type: "LCSweetspot"
+    options:
+      color: C.clone color
+      chromaRatio: 1
+      minLightness: L[ reverse mode ].min
+      maxLightness: L[ reverse mode ].max
+      deltaE: 12
 
   results = []
-  i = 0
-  while (( results.length < 5 ) && ( highlight.l < 1 ))
-    highlight.set "l", highlight.l + i
-    results = candidates.filter contrast
-    i = 0.1
-  results
-
+  for background in backgrounds
+    foreground = invert background, mode
+    for highlight in highlights
+      accent = rotate 15, highlight
+      palette = { background, foreground, highlight, accent }
+      results.push palette if contrast palette
+  console.log "produced #{ results.length } palettes"
   sort results
 
 class Producer
