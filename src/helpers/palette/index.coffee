@@ -39,7 +39,7 @@ Palette =
         mode: "dark"
         intensity: ( state.intensity / 100 )
         gradient: ( state.gradient / 100 )
-        index: state.scheme
+        index: ( state.scheme / 100 )
 
   get: ( name, palette ) ->
     palette.get( name ).color.toString()

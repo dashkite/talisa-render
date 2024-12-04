@@ -74,23 +74,29 @@ createSpace = ( color ) ->
 
 
 class Producer
-  constructor: ({ @color }) ->
+  # constructor: ({ @color }) ->
   
-  @make: ({ color }) ->
-    new Producer color: C.clone color
+  # @make: ({ color }) ->
+  #   new Producer color: C.clone color
 
-  Meta.mixin @::, [
-    Meta.getters
-      space: -> @_space ?= sort @color, createSpace @color
-  ]
+  # Meta.mixin @::, [
+  #   Meta.getters
+  #     space: -> @_space ?= sort @color, createSpace @color
+  # ]
 
-  select: ( gradient ) ->
-    index = Math.round ( @space.length - 1 ) * gradient
-    @space[ index ]
+  # select: ( gradient ) ->
+  #   index = Math.round ( @space.length - 1 ) * gradient
+  #   @space[ index ]
 
   @addStop: ({ name, gradient, palette }) ->
-    gradients = @make color: palette.get "#{ name }-start"
-    stop = gradients.select gradient
+    start = ( palette.get name ).color
+    adjustment = gradient * ( if ( start.l >= 0.8 ) then -0.2 else 0.2 )
+    stop = do Fn.pipe [
+      C.start start
+      C.set "l", start.l + adjustment
+    ]
+    console.log { start, stop }
+    P.set "#{ name }-start", start, palette
     P.set "#{ name }-stop", stop, palette
     palette
 
