@@ -14,8 +14,6 @@ Styles =
         resolver _value, target
 
   color: ( specifier ) ->
-    # TODO remove once we get this from the app
-    specifier.mode ?= "dark"
     Palette.toCSS Palette.from specifier
     
   fonts: ({ heading, copy, base }) ->

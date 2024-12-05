@@ -39,9 +39,6 @@ Palette =
       else
         result.push "--#{ name }-color: #{ color }"
         result.push "--#{ name }: var(--#{ name }-color)"
-
-    result.push "color: var(--foreground-color);"
-    result.push "background: var(--background);"
     ( result.join "; " ) + ";"
 
 

@@ -43,8 +43,11 @@ contrast = ({ background, foreground, highlight, accent }) ->
     ( 60 < ( C.absoluteContrast background, highlight ))
 
 
-sort = ( ax ) -> 
-  ax.sort ( A, B ) -> A.background.l - B.background.l
+sort = ( mode, palettes ) ->
+  if mode == "dark"
+    palettes.sort ( A, B ) -> A.background.l - B.background.l
+  else
+    palettes.sort ( A, B ) -> B.background.l - A.background.l
 
 reverse = ( mode ) -> if mode == "dark" then "light" else "dark"
 
@@ -75,30 +78,44 @@ generate = ( mode, color ) ->
       accent = rotate 15, highlight
       palette = { background, foreground, highlight, accent }
       results.push palette if contrast palette
-  sort results
+  sort mode, results
 
 class Producer
 
-  constructor: ({ @color }) -> @colors = {}
-  
+  constructor: ({ @color }) ->
+    @colors =
+      light: generate "light", @color
+      dark: generate "dark", @color
+
   @make: ( specifier ) -> new Producer specifier
 
-  select: ({ mode, gradient, intensity, background }) ->
+  select: ({ gradient, intensity, background }) ->
     
-    @colors[ mode ] ?= generate mode, @color
     index = Math.round ( @colors[ mode ].length - 1 ) * background
-    colors = @colors[ mode ][ index ]
+
+    colors = 
+      light: @colors.light[ index ]
+      dark: @colors.dark[ index ]
 
     palette = do Fn.pipe [
       P.start mode
-      P.set "background", adjust colors.background, intensity
-      P.set "foreground", adjust colors.foreground, intensity
-      P.set "highlight", adjust colors.highlight, intensity 
-      P.set "accent", adjust colors.accent, intensity
+      P.set "light-background", adjust colors.light.background, intensity
+      P.set "light-foreground", adjust colors.light.foreground, intensity
+      P.set "light-highlight", adjust colors.light.highlight, intensity 
+      P.set "light-accent", adjust colors.light.accent, intensity
+      P.set "dark-background", adjust colors.dark.background, intensity
+      P.set "dark-foreground", adjust colors.dark.foreground, intensity
+      P.set "dark-highlight", adjust colors.dark.highlight, intensity 
+      P.set "dark-accent", adjust colors.dark.accent, intensity
     ]
 
     Gradients.addStops {  
-      names: [ "highlight", "background" ]
+      names: [
+        "light-highlight"
+        "light-background"
+        "dark-highlight"
+        "dark-background"
+      ]
       gradient
       palette
     }
