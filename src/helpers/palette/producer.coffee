@@ -75,7 +75,6 @@ generate = ( mode, color ) ->
       accent = rotate 15, highlight
       palette = { background, foreground, highlight, accent }
       results.push palette if contrast palette
-  console.log "produced #{ results.length } palettes"
   sort results
 
 class Producer
