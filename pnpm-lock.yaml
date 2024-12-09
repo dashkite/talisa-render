@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@dashkite/colorist':
+        specifier: link:../colorist
+        version: link:../colorist
       '@dashkite/format-text':
         specifier: link:../format-text
         version: link:../format-text

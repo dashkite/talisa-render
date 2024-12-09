@@ -1,5 +1,6 @@
 import * as Fn from "@dashkite/joy/function"
 import * as Arr from "@dashkite/joy/array"
+import Palette from "./palette"
 
 flatten = ( array ) -> array.flat Infinity
 compact = ( array ) -> array.filter ( value ) -> value? && value != ""
@@ -12,9 +13,9 @@ Styles =
       if ( resolver = Styles[ key ])?
         resolver _value, target
 
-  color: ( value ) ->
-    "--input-color: #{ value }"
-
+  color: ( specifier ) ->
+    Palette.toCSS Palette.from specifier
+    
   fonts: ({ heading, copy, base }) ->
     "--heading-font: '#{ heading }';
       --copy-font: '#{ copy }';
