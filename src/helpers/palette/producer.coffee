@@ -89,16 +89,19 @@ class Producer
 
   @make: ( specifier ) -> new Producer specifier
 
+  getPalette: ( mode, background ) ->
+    palettes = @colors[ mode ]
+    index = Math.round ( palettes.length - 1 ) * background
+    palettes[ index ]
+
   select: ({ gradient, intensity, background }) ->
     
-    index = Math.round ( @colors[ mode ].length - 1 ) * background
-
     colors = 
-      light: @colors.light[ index ]
-      dark: @colors.dark[ index ]
+      light: @getPalette "light", background
+      dark: @getPalette "dark", background
 
     palette = do Fn.pipe [
-      P.start mode
+      P.start "colors"
       P.set "light-background", adjust colors.light.background, intensity
       P.set "light-foreground", adjust colors.light.foreground, intensity
       P.set "light-highlight", adjust colors.light.highlight, intensity 
