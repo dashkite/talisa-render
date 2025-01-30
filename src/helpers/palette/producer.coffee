@@ -82,7 +82,8 @@ generate = ( mode, color ) ->
 
 class Producer
 
-  constructor: ({ @color }) ->
+  constructor: ({ color }) ->
+    @color = C.create "oklch(66.66% .1 #{ color })"
     @colors =
       light: generate "light", @color
       dark: generate "dark", @color
