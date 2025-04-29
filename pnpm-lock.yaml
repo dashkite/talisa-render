@@ -60,6 +60,9 @@ importers:
       '@dashkite/genie-yaml':
         specifier: link:../genie-yaml
         version: link:../genie-yaml
+      '@dashkite/vista':
+        specifier: link:../vista
+        version: link:../vista
       esthetic:
         specifier: 0.6.4-beta.1
         version: 0.6.4-beta.1

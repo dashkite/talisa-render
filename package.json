@@ -52,6 +52,7 @@
     "@dashkite/genie-module": "link:../genie-module",
     "@dashkite/genie-stylus": "link:../genie-stylus",
     "@dashkite/genie-yaml": "link:../genie-yaml",
+    "@dashkite/vista": "link:../vista",
     "esthetic": "0.6.4-beta.1"
   },
   "dependencies": {
