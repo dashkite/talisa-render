@@ -11,7 +11,6 @@ Classes =
 
   subtype: Fn.identity
 
-  # TODO this gets phased out
   hints: ( value, target ) ->
     for key, _value of value
       if ( resolver = Classes[ key ])?

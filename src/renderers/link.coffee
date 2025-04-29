@@ -7,11 +7,6 @@ import { Gadgets } from "@dashkite/talisa"
 link = ( target ) ->
 
   # MAYBE this might be how we get the page URL
-  # TODO need production / preview variants  
-  # url = target.url ? do ->
-  #   gadget = target.$.find Gadgets.withName target.page
-  #   gadget?.url
-  # OR...just intercept the clicks in the preview component?
   { url, page } = target.brief
 
   HTML.a 
