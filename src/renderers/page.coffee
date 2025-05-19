@@ -1,4 +1,4 @@
-import { HTML } from "@dashkite/html-render"
+import { HTML } from "@dashkite/domo"
 import render from "#helpers/render"
 import Attributes from "#helpers/attributes"
 import  { Gadgets } from "@dashkite/talisa"

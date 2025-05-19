@@ -5,7 +5,7 @@ import * as Type from "@dashkite/joy/type"
 
 import { Gadgets, Gadget } from "@dashkite/talisa"
 import esthetic from "esthetic"
-import { HTML } from "@dashkite/html-render"
+import { HTML } from "@dashkite/domo"
 
 import { render, preview } from "../src/index"
 

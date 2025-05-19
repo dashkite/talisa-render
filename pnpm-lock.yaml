@@ -11,6 +11,9 @@ importers:
       '@dashkite/colorist':
         specifier: link:../colorist
         version: link:../colorist
+      '@dashkite/domo':
+        specifier: link:../domo
+        version: link:../domo
       '@dashkite/format-text':
         specifier: link:../format-text
         version: link:../format-text

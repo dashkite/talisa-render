@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "@dashkite/colorist": "link:../colorist",
+    "@dashkite/domo": "link:../domo",
     "@dashkite/format-text": "link:../format-text",
     "@dashkite/generic": "link:../generic",
     "@dashkite/html-render": "link:../html-render",
