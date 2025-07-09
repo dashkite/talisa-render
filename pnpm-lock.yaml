@@ -57,6 +57,9 @@ importers:
       '@dashkite/genie-module':
         specifier: link:../genie-module
         version: link:../genie-module
+      '@dashkite/genie-release':
+        specifier: link:../genie-release
+        version: link:../genie-release
       '@dashkite/genie-stylus':
         specifier: link:../genie-stylus
         version: link:../genie-stylus
