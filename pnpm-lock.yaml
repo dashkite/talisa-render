@@ -30,8 +30,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0
       '@dashkite/verve':
-        specifier: link:../verve
-        version: link:../verve
+        specifier: 0.1.0
+        version: 0.1.0
       marked:
         specifier: ^14.0.0
         version: 14.0.0
@@ -728,6 +728,9 @@ packages:
 
   '@dashkite/talisa@0.5.0':
     resolution: {integrity: sha512-/BBU62jcfD0mrxAGQSUXrMYiGm2m7FJCt4+UCC5KgK0516MJ2lo3Xhg5mRfIkrfadekTXAENcyFTAGKh/L6Xfg==}
+
+  '@dashkite/verve@0.1.0':
+    resolution: {integrity: sha512-KihgQDA+3dvfYJybJG4Fg5TQiL2lMQZb9QfW8mXpTLqFkcAGROg3Djm4Luyv4pZEp7fZ+W2+lD0pVsshsN8vSw==}
 
   '@dashkite/zephyr@0.2.0':
     resolution: {integrity: sha512-l3Fm9nyOIp1yBnv4IzGOKVgo1/UucU5WLvsqAfcP2jEVlE4AgpPkODssyloxTyC3N+bhcz1DXqC/7KokI1eVjA==}
@@ -2520,6 +2523,8 @@ snapshots:
       '@dashkite/format-text': 0.5.0
       '@dashkite/generic': 0.5.0
       '@dashkite/joy': 0.7.0
+
+  '@dashkite/verve@0.1.0': {}
 
   '@dashkite/zephyr@0.2.0':
     dependencies:

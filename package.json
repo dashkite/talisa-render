@@ -63,7 +63,7 @@
     "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "0.8.0",
     "@dashkite/talisa": "0.5.0",
-    "@dashkite/verve": "link:../verve",
+    "@dashkite/verve": "0.1.0",
     "marked": "^14.0.0"
   }
 }
