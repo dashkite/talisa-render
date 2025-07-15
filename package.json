@@ -56,13 +56,13 @@
     "esthetic": "0.6.4-beta.1"
   },
   "dependencies": {
-    "@dashkite/colorist": "link:../colorist",
+    "@dashkite/colorist": "1.5.0",
     "@dashkite/domo": "link:../domo",
-    "@dashkite/format-text": "link:../format-text",
-    "@dashkite/generic": "link:../generic",
+    "@dashkite/format-text": "0.6.0",
+    "@dashkite/generic": "0.6.0",
     "@dashkite/html-render": "link:../html-render",
-    "@dashkite/joy": "link:../joy",
-    "@dashkite/talisa": "link:../talisa",
+    "@dashkite/joy": "0.8.0",
+    "@dashkite/talisa": "0.5.0",
     "@dashkite/verve": "link:../verve",
     "marked": "^14.0.0"
   }
