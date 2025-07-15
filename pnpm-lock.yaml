@@ -58,16 +58,19 @@ importers:
         specifier: ^0.2.10
         version: 0.2.10
       '@dashkite/genie-stylus':
-        specifier: link:../genie-stylus
-        version: link:../genie-stylus
+        specifier: 0.8.0
+        version: 0.8.0
       '@dashkite/genie-yaml':
-        specifier: link:../genie-yaml
-        version: link:../genie-yaml
+        specifier: 0.8.0
+        version: 0.8.0
       esthetic:
         specifier: 0.6.4-beta.1
         version: 0.6.4-beta.1
 
 packages:
+
+  '@adobe/css-tools@4.2.0':
+    resolution: {integrity: sha512-E09FiIft46CmH5Qnjb0wsW54/YQd69LsxeKUOWawmws1XWvyFGURnAChH0mlr7YPFR1ofwvUQfcL0J3lMxXqPA==}
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -652,6 +655,12 @@ packages:
   '@dashkite/genie-release@0.2.10':
     resolution: {integrity: sha512-8pczG/SY+Nbstl+cIc9s0+tsNewNTyNfi60g7RHvpzxe6Qd2/WUCIfmFqcF39CAUVlAq94+6M29vhDOwPlLk/Q==}
 
+  '@dashkite/genie-stylus@0.8.0':
+    resolution: {integrity: sha512-5pothZUqdJC+ulc9pxwjD8FaQBKiO857mUgs9x5CcwPapT4nnysz9Z5IQZ6Mh4sbgNTtYFWx8DQpp32tMGj+cw==}
+
+  '@dashkite/genie-yaml@0.8.0':
+    resolution: {integrity: sha512-eT09ZFwLp71IobHpREDDDhrv3rVvd8/Mg3fpmd8klXDT5BW97Z66gqqLQhfduHrT/ULIBXgyrxk/+yojOdvMNw==}
+
   '@dashkite/genie@0.16.0':
     resolution: {integrity: sha512-jaX9jpDHZnMJtmO5m0evteym4f69fK7vX8dXnBeDR9I0GGL8DYQgeZ8PeoOBwXq7Mvh9734Yyp+QfvXiOzy8gA==}
     engines: {node: '>=20.0.0'}
@@ -681,11 +690,38 @@ packages:
   '@dashkite/masonry-coffee@0.2.0':
     resolution: {integrity: sha512-xJO48SIRpsYbJF32CwpA6yeEJhNh+DtxCucyt4MNJqO0yru9X7hoxZsHneRoUE+kISD0KTO8DLQiHv21nU/V2A==}
 
+  '@dashkite/masonry-export@0.1.0':
+    resolution: {integrity: sha512-K5ILSl4b+8SatTJTO4AJO+QuBR+coXk9gkeAZRtIx7qhuhdJbB1dCq+pqscYGJ81He1lzHP4DiQtEAf8wBHykA==}
+
+  '@dashkite/masonry-export@0.7.0':
+    resolution: {integrity: sha512-1Ll6nOYRKU2ylp9GH4UOG06g4otHxUW6q9xeIKxzwyrYXnHgWBRfS8Q18mDwWeT0Bcp1Qu9V/cDN1OsN9F0+/Q==}
+
+  '@dashkite/masonry-hooks@0.8.0':
+    resolution: {integrity: sha512-GqZt5YlYURo4j1v7qNjP0QxZ+Qb3pts/G2aPgVtL3ZHGwEYtj2fCf58nNUwmygdK89n3LiEY6RvR0uvmmKXMPA==}
+
+  '@dashkite/masonry-stylus@0.8.0':
+    resolution: {integrity: sha512-lZ8AAHhSezJe3wf0kVoVlFAuWSIiOuMdPf+HJ1fxCXJL8REJ88rcN6zLxLU9OkwBgiyfaCcdiha6+XhtdRhPig==}
+
   '@dashkite/masonry-targets@0.1.0':
     resolution: {integrity: sha512-nb1N+oBZLw04AFUV49ZFLBAb/NQ0fJseO6ACrEfgXkHra2I1oxwHxLIKtMqWcedQa3QP2pqA/eeBmtGiTQGM0Q==}
 
+  '@dashkite/masonry-targets@0.9.0':
+    resolution: {integrity: sha512-nIjZXgJpj0JMeErNhOfuqe2QVrYNFv+8ErF5rmmnGn9MJDvb9zkG1NdLxPt7uPRx/houtV7lrHEhSuS8AzBwDQ==}
+
+  '@dashkite/masonry-text@0.7.0':
+    resolution: {integrity: sha512-5nxGc+caqu5L8oT8YtbmmMqh8PMFlJVLthhohR4QmNI2HwZ+XHjtyi33P9TKyxAkLBHPFcoVfui0M42p2kaseA==}
+
+  '@dashkite/masonry-yaml@0.8.0':
+    resolution: {integrity: sha512-kvLSQa339SG7yueaas34ckNsSq6rbteKKK9tusT0JlmvqTkoPPOkAsMmpVvtIXKdEdoF680lEeIc5fBlsH3nPA==}
+
   '@dashkite/masonry@0.13.0':
     resolution: {integrity: sha512-qGP0Ortn8tzBTY9BRv965V5IIhJCmsNMTjLq0X7Pk80lBgNROc+tV/5BXjziBZ9CG7fcJ5h3ZvCsl1f6byfsFQ==}
+
+  '@dashkite/masonry@0.14.0':
+    resolution: {integrity: sha512-5POHf/fpqgFba4Xbrr8oNHIpkKTD1WgFTZMjBZBvluv8YBWzLayAd9l4R0TYy+MybBVFFJ2Tj7v5DlIu6dPgvw==}
+
+  '@dashkite/masonry@0.21.0':
+    resolution: {integrity: sha512-3S9WLN+TuP1aUjNbcjshe0LV9otoHFujNs08Ysdt4tzNxpjdvc3AuynP9c188qB2+RtPjp1q8AkUNwUN2JaFDA==}
 
   '@dashkite/quark@2.2.0':
     resolution: {integrity: sha512-kMzMLhTn0R7N1woml1BTuanpdGuUgXz7RkfvWreZ9v1QUzcY9tAFjQygplcpA0/QO8VN8AGWaH4vzEdH9VlwqQ==}
@@ -1420,6 +1456,9 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
+  sax@1.2.4:
+    resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
+
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
@@ -1442,6 +1481,10 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
+  source-map@0.7.4:
+    resolution: {integrity: sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==}
+    engines: {node: '>= 8'}
+
   string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
     engines: {node: '>=8'}
@@ -1457,6 +1500,10 @@ packages:
   strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
+
+  stylus@0.60.0:
+    resolution: {integrity: sha512-j2pBgEwzCu05yCuY4cmyp0FtPQQFBBAGB7TY7QaNl7eztiHwkxzwvIp5vjZJND/a1JNOka+ZW9ewVPFZpI3pcA==}
+    hasBin: true
 
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
@@ -1554,6 +1601,8 @@ packages:
     hasBin: true
 
 snapshots:
+
+  '@adobe/css-tools@4.2.0': {}
 
   '@ampproject/remapping@2.3.0':
     dependencies:
@@ -2337,6 +2386,24 @@ snapshots:
       '@dashkite/zephyr': 0.2.0
       zx: 8.7.1
 
+  '@dashkite/genie-stylus@0.8.0':
+    dependencies:
+      '@dashkite/masonry': 0.21.0
+      '@dashkite/masonry-stylus': 0.8.0
+      '@dashkite/masonry-targets': 0.9.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@dashkite/genie-yaml@0.8.0':
+    dependencies:
+      '@dashkite/masonry': 0.21.0
+      '@dashkite/masonry-export': 0.7.0
+      '@dashkite/masonry-hooks': 0.8.0
+      '@dashkite/masonry-targets': 0.9.0
+      '@dashkite/masonry-yaml': 0.8.0
+    transitivePeerDependencies:
+      - supports-color
+
   '@dashkite/genie@0.16.0':
     dependencies:
       '@dashkite/joy': 0.3.16
@@ -2375,12 +2442,64 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
+  '@dashkite/masonry-export@0.1.0': {}
+
+  '@dashkite/masonry-export@0.7.0': {}
+
+  '@dashkite/masonry-hooks@0.8.0':
+    dependencies:
+      '@dashkite/masonry': 0.14.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@dashkite/masonry-stylus@0.8.0':
+    dependencies:
+      '@dashkite/masonry-text': 0.7.0
+      stylus: 0.60.0
+    transitivePeerDependencies:
+      - supports-color
+
   '@dashkite/masonry-targets@0.1.0':
     dependencies:
       '@dashkite/joy': 0.3.16
       fast-glob: 3.3.3
 
+  '@dashkite/masonry-targets@0.9.0':
+    dependencies:
+      '@dashkite/joy': 0.3.16
+      fast-glob: 3.3.3
+
+  '@dashkite/masonry-text@0.7.0':
+    dependencies:
+      '@dashkite/masonry-export': 0.1.0
+
+  '@dashkite/masonry-yaml@0.8.0':
+    dependencies:
+      js-yaml: 4.1.0
+
   '@dashkite/masonry@0.13.0':
+    dependencies:
+      '@babel/core': 7.22.15
+      '@babel/preset-env': 7.22.15(@babel/core@7.22.15)
+      '@dashkite/joy': 0.3.16
+      chalk: 4.1.2
+      chokidar: 3.6.0
+      fast-glob: 3.3.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@dashkite/masonry@0.14.0':
+    dependencies:
+      '@babel/core': 7.22.15
+      '@babel/preset-env': 7.22.15(@babel/core@7.22.15)
+      '@dashkite/joy': 0.3.16
+      chalk: 4.1.2
+      chokidar: 3.6.0
+      fast-glob: 3.3.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@dashkite/masonry@0.21.0':
     dependencies:
       '@babel/core': 7.22.15
       '@babel/preset-env': 7.22.15(@babel/core@7.22.15)
@@ -3100,6 +3219,8 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
+  sax@1.2.4: {}
+
   semver@6.3.1: {}
 
   shebang-command@2.0.0:
@@ -3117,6 +3238,8 @@ snapshots:
 
   source-map@0.6.1: {}
 
+  source-map@0.7.4: {}
+
   string-width@4.2.3:
     dependencies:
       emoji-regex: 8.0.0
@@ -3130,6 +3253,16 @@ snapshots:
   strip-final-newline@2.0.0: {}
 
   strip-json-comments@3.1.1: {}
+
+  stylus@0.60.0:
+    dependencies:
+      '@adobe/css-tools': 4.2.0
+      debug: 4.4.1
+      glob: 7.2.3
+      sax: 1.2.4
+      source-map: 0.7.4
+    transitivePeerDependencies:
+      - supports-color
 
   supports-color@7.2.0:
     dependencies:
