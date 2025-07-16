@@ -55,8 +55,8 @@ importers:
         specifier: 0.9.0
         version: 0.9.0
       '@dashkite/genie-release':
-        specifier: ^0.2.12
-        version: 0.2.12
+        specifier: ^0.2.14
+        version: 0.2.14
       '@dashkite/genie-stylus':
         specifier: 0.8.0
         version: 0.8.0
@@ -652,8 +652,8 @@ packages:
   '@dashkite/genie-coffee@0.9.0':
     resolution: {integrity: sha512-8Ukg3m/nQnxbmrww313lzYJJQRAxhRgbPpbqCWj7ovzS8LejoA1OGbbjRd8Ew7SdzZrJ6WYY7d08VxIbim72mw==}
 
-  '@dashkite/genie-release@0.2.12':
-    resolution: {integrity: sha512-pO0uXG1ntZT+inD63YobSW84MyeHNiEuwpiDsDR5LvwVfhXlwQtZEQCVpimfHKAf14SeZ5RL8YQKgeRy1V/+Lw==}
+  '@dashkite/genie-release@0.2.14':
+    resolution: {integrity: sha512-nCl/031ZlxwIXC6ThX7xv1HBKo4GVxesKU2d3PcWDrXe7heXGC7bjmxmS3ZVqhH9zXV7T+bDOsDWOOUMH2wciA==}
 
   '@dashkite/genie-stylus@0.8.0':
     resolution: {integrity: sha512-5pothZUqdJC+ulc9pxwjD8FaQBKiO857mUgs9x5CcwPapT4nnysz9Z5IQZ6Mh4sbgNTtYFWx8DQpp32tMGj+cw==}
@@ -732,8 +732,8 @@ packages:
   '@dashkite/verve@0.1.0':
     resolution: {integrity: sha512-KihgQDA+3dvfYJybJG4Fg5TQiL2lMQZb9QfW8mXpTLqFkcAGROg3Djm4Luyv4pZEp7fZ+W2+lD0pVsshsN8vSw==}
 
-  '@dashkite/zephyr@0.2.0':
-    resolution: {integrity: sha512-l3Fm9nyOIp1yBnv4IzGOKVgo1/UucU5WLvsqAfcP2jEVlE4AgpPkODssyloxTyC3N+bhcz1DXqC/7KokI1eVjA==}
+  '@dashkite/zephyr@0.12.1':
+    resolution: {integrity: sha512-84wSTbmFpI+tydtzTkMT6FS5ybnNaL4V40fA2c235/UPx/Whg3NRr6BaVLW53+v+bHL6fDbttCTZNNLEtzTxPw==}
 
   '@eslint-community/eslint-utils@4.7.0':
     resolution: {integrity: sha512-dyybb3AcajC7uha6CvhdVRJqaKyn7w2YKqKyAN37NKYgZT36w+iRb0Dymmc5qEJ549c/S31cMMSFd75bteCpCw==}
@@ -2384,9 +2384,9 @@ snapshots:
       - '@swc/helpers'
       - supports-color
 
-  '@dashkite/genie-release@0.2.12':
+  '@dashkite/genie-release@0.2.14':
     dependencies:
-      '@dashkite/zephyr': 0.2.0
+      '@dashkite/zephyr': 0.12.1
       zx: 8.7.1
 
   '@dashkite/genie-stylus@0.8.0':
@@ -2526,9 +2526,9 @@ snapshots:
 
   '@dashkite/verve@0.1.0': {}
 
-  '@dashkite/zephyr@0.2.0':
+  '@dashkite/zephyr@0.12.1':
     dependencies:
-      '@dashkite/joy': 0.3.16
+      '@dashkite/joy': 0.7.0
       js-yaml: 4.1.0
 
   '@eslint-community/eslint-utils@4.7.0(eslint@8.57.1)':
