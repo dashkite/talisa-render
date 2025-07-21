@@ -60,7 +60,6 @@
     "@dashkite/domo": "link:../domo",
     "@dashkite/format-text": "0.6.0",
     "@dashkite/generic": "0.6.0",
-    "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "0.8.0",
     "@dashkite/talisa": "0.5.0",
     "@dashkite/verve": "0.1.0",
