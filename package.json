@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@dashkite/colorist": "1.5.0",
-    "@dashkite/domo": "link:../domo",
+    "@dashkite/domo": "0.2.0",
     "@dashkite/format-text": "0.6.0",
     "@dashkite/generic": "0.6.0",
     "@dashkite/joy": "0.8.0",
