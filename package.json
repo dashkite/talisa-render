@@ -56,8 +56,8 @@
     "esthetic": "0.6.4-beta.1"
   },
   "dependencies": {
-    "@dashkite/colorist": "^1.8.3",
-    "@dashkite/domo": "^0.2.3",
+    "@dashkite/colorist": "^1.8.4",
+    "@dashkite/domo": "^0.2.4",
     "@dashkite/format-text": "^0.6.0",
     "@dashkite/generic": "^0.6.0",
     "@dashkite/joy": "^0.8.0",
