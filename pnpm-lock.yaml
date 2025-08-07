@@ -12,8 +12,8 @@ importers:
         specifier: ^1.8.10
         version: 1.8.10
       '@dashkite/domo':
-        specifier: ^0.2.10
-        version: 0.2.10
+        specifier: ^0.2.11
+        version: 0.2.11
       '@dashkite/format-text':
         specifier: ^0.6.0
         version: 0.6.0
@@ -631,8 +631,8 @@ packages:
   '@dashkite/colorist@1.8.10':
     resolution: {integrity: sha512-LZeg+0tlTaugTsF0o957UuyDnf+7iBQXEZ+U9g2oWH6xjuKEurP0nMyo5zQ+gAcpo/bdV6JwxIHwlrczXSNL/Q==}
 
-  '@dashkite/domo@0.2.10':
-    resolution: {integrity: sha512-GepaRGVfxwgJFS+nBYgWfgtbvYrXcQdpPqgo0O+uV6reYxB7lUz/iU2mUqmg9zPArdEvvo8E6cSRrAiekjz8Nw==}
+  '@dashkite/domo@0.2.11':
+    resolution: {integrity: sha512-YgDCaDOSM/0S9lEFhXOnPReh+Yx05qhtvMnTGnHho6Zl7LBV4OkRwEwhDWu5GuVQ7QibWOqeaPHBd3X/fUaCNA==}
 
   '@dashkite/format-text@0.5.0':
     resolution: {integrity: sha512-v2Ri1PmnsXeAamAp2k8EMtYkweyKigIqLWYdmWu9wtpsGLhavQcxQ1BCHkUQrFjLDFq8QcHKRBWS3E449SW/Lw==}
@@ -2361,7 +2361,7 @@ snapshots:
       colorjs.io: 0.5.2
       cubic-spline: 3.0.3
 
-  '@dashkite/domo@0.2.10':
+  '@dashkite/domo@0.2.11':
     dependencies:
       '@dashkite/generic': 0.9.8
       '@dashkite/joy': 0.11.0
