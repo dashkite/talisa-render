@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@dashkite/colorist':
-        specifier: ^1.8.8
-        version: 1.8.8
+        specifier: ^1.8.10
+        version: 1.8.10
       '@dashkite/domo':
-        specifier: ^0.2.8
-        version: 0.2.8
+        specifier: ^0.2.10
+        version: 0.2.10
       '@dashkite/format-text':
         specifier: ^0.6.0
         version: 0.6.0
@@ -43,8 +43,8 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0
       '@dashkite/genie':
-        specifier: ^0.20.10
-        version: 0.20.10
+        specifier: ^0.20.11
+        version: 0.20.11
       '@dashkite/genie-clean':
         specifier: ^0.9.0
         version: 0.9.0
@@ -628,11 +628,11 @@ packages:
   '@dashkite/color-thief@0.6.0':
     resolution: {integrity: sha512-wWlRVd4ttwt/314qO4uopLu15KAMVeAHoDGFcndCZlf4kD1TTmmsQJ+XOEkGWtOiSebRbmVikP5eOFbmYrl7WA==}
 
-  '@dashkite/colorist@1.8.8':
-    resolution: {integrity: sha512-qWaFBjEKBmikPpttUCx5ypSEH9ZzfRqHwmFxGVmiRBa3movWGVBDRhNyTgV6ig3Iz9/Zb6BjUZKP8ciO26eUlg==}
+  '@dashkite/colorist@1.8.10':
+    resolution: {integrity: sha512-LZeg+0tlTaugTsF0o957UuyDnf+7iBQXEZ+U9g2oWH6xjuKEurP0nMyo5zQ+gAcpo/bdV6JwxIHwlrczXSNL/Q==}
 
-  '@dashkite/domo@0.2.8':
-    resolution: {integrity: sha512-lMjdGAp6Ck+SX50SDM1hWvl0rj7Xbp70Y6SE74GzNzQu+p9u5UNleImsbh3aLQrbmGBz9IALENfGSGxjxm4dbg==}
+  '@dashkite/domo@0.2.10':
+    resolution: {integrity: sha512-GepaRGVfxwgJFS+nBYgWfgtbvYrXcQdpPqgo0O+uV6reYxB7lUz/iU2mUqmg9zPArdEvvo8E6cSRrAiekjz8Nw==}
 
   '@dashkite/format-text@0.5.0':
     resolution: {integrity: sha512-v2Ri1PmnsXeAamAp2k8EMtYkweyKigIqLWYdmWu9wtpsGLhavQcxQ1BCHkUQrFjLDFq8QcHKRBWS3E449SW/Lw==}
@@ -646,8 +646,8 @@ packages:
   '@dashkite/generic@0.6.0':
     resolution: {integrity: sha512-opM7Ya+GashMrUSVvM2415rvDZQW8OKOQuY9/pol25lGRyPk/7M2u/AMR78S2AdA5glY6gcU43YhsAcEad8/Eg==}
 
-  '@dashkite/generic@0.9.6':
-    resolution: {integrity: sha512-5DMmIsx4goUzpNqUvk8Gj/6FKe724bzXDhWzc9qsDWwXJv8ZOkro+RYwgpl1zU1Mn4WgvsU0RJzEqH9pHkDGeQ==}
+  '@dashkite/generic@0.9.8':
+    resolution: {integrity: sha512-7Hc6Rs59Ozj3uTK6kt1EBgiYbh50rmY7e41IOAxpcvlHoaWUOYSFMflhQ5YWevSOXJtXiwCwr/NLTcYpV+iGJg==}
 
   '@dashkite/genie-clean@0.9.0':
     resolution: {integrity: sha512-cR5IaFycabxIOH0XrExG5DCrm91milsdPqt104+AcIFEtpthwQ55lgOkS660tC8l7SxnwZzMZbZxHP3oK0iT0A==}
@@ -664,8 +664,8 @@ packages:
   '@dashkite/genie-yaml@0.8.0':
     resolution: {integrity: sha512-eT09ZFwLp71IobHpREDDDhrv3rVvd8/Mg3fpmd8klXDT5BW97Z66gqqLQhfduHrT/ULIBXgyrxk/+yojOdvMNw==}
 
-  '@dashkite/genie@0.20.10':
-    resolution: {integrity: sha512-Ir9aw5anu9t2F0tlIfmauT1ofKzU2kGpxVfc4bnW9t+Uz7SrIrC4sauX+r/2PzrkXk/gRAhuKT7VKTz+SlYcqw==}
+  '@dashkite/genie@0.20.11':
+    resolution: {integrity: sha512-IVZs3Kiso/BmiDr5wHza8aeAjWvGfbxXxdmn4sV6iQrpo/Bsv3A/1Gbcblc7fhXzvwtTtG2x0ASlvpcSVyz3Pw==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -729,8 +729,8 @@ packages:
   '@dashkite/masonry@0.21.0':
     resolution: {integrity: sha512-3S9WLN+TuP1aUjNbcjshe0LV9otoHFujNs08Ysdt4tzNxpjdvc3AuynP9c188qB2+RtPjp1q8AkUNwUN2JaFDA==}
 
-  '@dashkite/quark@2.6.9':
-    resolution: {integrity: sha512-VvGqndETIg+rpmCDzII5MMUV1urOHgvvqv4DqFQqMiqF24WOozs/RkQNlGx5iaFgd2VKU9KRTyYRB/bI0xhhyg==}
+  '@dashkite/quark@2.6.10':
+    resolution: {integrity: sha512-Mgwh+4jMiCuzJBEZTo5dfuEjLm+k2tzojlRf1ftdgdHy00Cat/2W7XQAAFhZVQIRjUpjZNleJ3N0ptmLcSOz/Q==}
 
   '@dashkite/talisa@0.5.0':
     resolution: {integrity: sha512-/BBU62jcfD0mrxAGQSUXrMYiGm2m7FJCt4+UCC5KgK0516MJ2lo3Xhg5mRfIkrfadekTXAENcyFTAGKh/L6Xfg==}
@@ -2352,18 +2352,18 @@ snapshots:
     dependencies:
       '@dashkite/joy': 0.3.16
 
-  '@dashkite/colorist@1.8.8':
+  '@dashkite/colorist@1.8.10':
     dependencies:
       '@dashkite/color-thief': 0.6.0
       '@dashkite/joy': 0.7.0
-      '@dashkite/quark': 2.6.9
+      '@dashkite/quark': 2.6.10
       chroma-js: 2.6.0
       colorjs.io: 0.5.2
       cubic-spline: 3.0.3
 
-  '@dashkite/domo@0.2.8':
+  '@dashkite/domo@0.2.10':
     dependencies:
-      '@dashkite/generic': 0.9.6
+      '@dashkite/generic': 0.9.8
       '@dashkite/joy': 0.11.0
 
   '@dashkite/format-text@0.5.0':
@@ -2382,7 +2382,7 @@ snapshots:
     dependencies:
       '@dashkite/joy': 0.7.0
 
-  '@dashkite/generic@0.9.6':
+  '@dashkite/generic@0.9.8':
     dependencies:
       '@dashkite/joy': 0.7.0
 
@@ -2426,7 +2426,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@dashkite/genie@0.20.10':
+  '@dashkite/genie@0.20.11':
     dependencies:
       '@dashkite/joy': 0.7.0
       '@dashkite/kaiko': 0.3.3
@@ -2534,7 +2534,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@dashkite/quark@2.6.9':
+  '@dashkite/quark@2.6.10':
     dependencies:
       '@dashkite/joy': 0.7.0
       '@dashkite/katana': 0.4.8
