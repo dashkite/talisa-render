@@ -1,6 +1,6 @@
 {
   "name": "@dashkite/talisa-render",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Render Talisa Pages into HTML/CSS",
   "keywords": [],
   "homepage": "https://github.com/dashkite/talisa-render#readme",
