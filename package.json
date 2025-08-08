@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "@dashkite/colorist": "^1.8.12",
-    "@dashkite/domo": "^0.2.14",
+    "@dashkite/domo": "^0.2.15",
     "@dashkite/format-text": "^0.6.0",
     "@dashkite/generic": "^0.6.0",
     "@dashkite/joy": "^0.8.0",
